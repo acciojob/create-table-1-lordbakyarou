@@ -1,12 +1,11 @@
-function insert_Row() {
-  //Write your code here
+const select = document.getElementById("colorSelect");
 
-  let tbody = document.getElementsByTagName("tbody")[0];
-  let getTr = tbody.children[0];
+const getButton = document.querySelector("form > input");
 
-  let tr = document.createElement("tr");
-
-  tr.innerHTML = `<td>New Cell1</td> <td>New Cell2</td>`;
-
-  tbody.insertBefore(tr, getTr);
-}
+getButton.addEventListener("click", (event) => {
+  for (let i = 0; i < select.children.length; i++) {
+    if (select.children[i].value === select.value) {
+      select.removeChild(select.children[i]);
+    }
+  }
+});
